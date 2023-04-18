@@ -1,0 +1,8 @@
+name: LineUpPlugin
+version: '${project.version}'
+main: TACOWASA059.lineupplugin.LineUpPlugin
+api-version: 1.16
+authors: [ TACOWASA059 ]
+commands:
+  lup:
+    description:
