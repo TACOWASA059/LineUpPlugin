@@ -1,0 +1,4 @@
+#LineType 0:視線方向に並ぶ
+#LineType 1:視線に対して横方向に並ぶ
+LineType: 1
+Distance: 1.0

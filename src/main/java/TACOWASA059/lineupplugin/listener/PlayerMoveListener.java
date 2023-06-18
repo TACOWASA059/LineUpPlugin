@@ -9,10 +9,13 @@ public class PlayerMoveListener implements Listener {
 
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
-        // プレイヤーが動いたときの処理をここに書く
+        // プレイヤーは基本的に動けない
         // event.getPlayer()でプレイヤーのオブジェクトを取得できる
         // event.getFrom()で移動前の座標、event.getTo()で移動後の座標を取得できる
         // 例えば、以下のようにコンソールにメッセージを出力するだけの処理を行うことができる
-        if(LineUpPlugin.plugin.run) event.getTo().set(event.getFrom().getX(),event.getFrom().getY(),event.getFrom().getZ());
+        if(LineUpPlugin.plugin.run){
+            if(LineUpPlugin.plugin.getConfig().getInt("LineType")==1) event.getTo().set(event.getFrom().getX(),event.getTo().getY(),event.getFrom().getZ());
+            if(LineUpPlugin.plugin.getConfig().getInt("LineType")==0) event.getTo().set(event.getFrom().getX(),event.getFrom().getY(),event.getFrom().getZ());
+        }
     }
 }

@@ -12,14 +12,11 @@ public final class LineUpPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin=this;
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
         // Plugin startup logic
         getCommand("lup").setExecutor(new CommandManager());
         getCommand("lup").setTabCompleter(new TabCompleterManager());
         getServer().getPluginManager().registerEvents(new PlayerMoveListener(),this);
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 }
